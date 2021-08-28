@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Chinese Numbers
+    </title>
+   <style>
+       div#Background {
+           background-color:#e0e38d;
+           height:500px;
+           width:350px;
+           border:2px solid #2d2c85;
+           margin-left:auto;
+           margin-right:auto;
+       }
+       .numbers {
+           height: 25px;
+           width: 40px;
+           margin: 5px;
+           margin-top: 40px;
+           
+       }
+       .gStar{
+           margin-top:100px;
+       
+       }
+       .play {
+       height:25px;
+       width:60px;
+       margin-top:50px;
+       margin-left:145px;
+       margin-right:145px;
+       }
+       
+   </style>
+   
+</head>
+<body>
+    <div id="Background">
+        <p id="title" style="color:black; font-size:30px;font-weight:bold;text-align:center">Chinese Numbers</p>
+        <input id="btnPlay" type="button" value="Play" class="play" onclick="btnPlay_onClick()" />
+        <input id="btn1" class="numbers" type="button" value="1" disabled="disabled" onclick="btn1_onClick()"/><input id="btn2" class="numbers" type="button" value="2" disabled="disabled"onclick="btn2_onClick()" />
+        <input id="btn3" class="numbers" type="button" value="3" disabled="disabled"onclick="btn3_onClick()"/><input id="btn4" class="numbers" type="button" value="4" disabled="disabled"onclick="btn4_onClick()"/>
+        <input id="btn5" class="numbers" type="button" value="5" disabled="disabled" onclick="btn5_onClick()"/><input id="btn6" class="numbers" type="button" value="6" disabled="disabled"onclick="btn6_onClick()"/>
+        <input id="btn7" class="numbers" type="button" value="7" disabled="disabled" onclick="btn7_onClick()"/><input id="btn8" class="numbers" type="button" value="8" disabled="disabled"onclick="btn8_onClick()" />
+        <input id="btn9" class="numbers" type="button" value="9" disabled="disabled"onclick="btn9_onClick()"/><input id="btn10" class="numbers" type="button" value="10" disabled="disabled"onclick="btn10_onClick()"/>
+        <p id="Feedback"></p>
+        <img src="images/StarOff.gif" class="gStar" id="1" /><img src="images/StarOff.gif" class="gStar"id="2" /><img src="images/StarOff.gif" class="gStar" id="3"/>
+        <img src="images/StarOff.gif"id="4" class="gStar" /><img src="images/StarOff.gif" class="gStar"id="5" />
+    </div>
+</body>
+</html>
+<script>
+    //This array stores sounds which represent numbers.
+    var Sound = new Array(10);
+    Sound[0] = "sounds/ChineseNumber1.wav";
+    Sound[1] = "sounds/ChineseNumber2.wav";
+    Sound[2] = "sounds/ChineseNumber3.wav";
+    Sound[3] = "sounds/ChineseNumber4.wav";
+    Sound[4] = "sounds/ChineseNumber5.wav";
+    Sound[5] = "sounds/ChineseNumber6.wav";
+    Sound[6] = "sounds/ChineseNumber7.wav";
+    Sound[7] = "sounds/ChineseNumber8.wav";
+    Sound[8] = "sounds/ChineseNumber9.wav";
+    Sound[9] = "sounds/ChineseNumber10.wav";
+
+    var h = 0;//If this variable equals 0 an if statment condition is met to create random number.
+    var b;//This variable stores number created by Math.random().
+    var a;//When button play is has been pressed this variable stores buttons which represent numbers.
+    var q = 0;//Used to disable and enable numbers' buttons.
+    var score = 0;
+    var previousNumber = 11;
+    
+    function btn1_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 1) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1; 
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[0].style.background = "red";
+            new Audio(Sound[0]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5)
+        {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn2_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 2) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[1].style.background = "red";
+            new Audio(Sound[1]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn3_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 3) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[2].style.background = "red";
+            new Audio(Sound[2]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn4_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 4) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[3].style.background = "red";
+            new Audio(Sound[3]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn5_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 5) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[4].style.background = "red";
+            new Audio(Sound[4]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn6_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 6) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[5].style.background = "red";
+            new Audio(Sound[5]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn7_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 7) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[6].style.background = "red";
+            new Audio(Sound[6]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn8_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 8) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[7].style.background = "red";
+            new Audio(Sound[7]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn9_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+        
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 9) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[8].style.background = "red";
+            new Audio(Sound[8]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+    function btn10_onClick() {
+        a = document.querySelectorAll('.numbers');
+        h = 0;
+       
+        while (q <= 9) {
+            a[q].disabled = true;
+            q = q + 1;
+        }
+        if (b == 10) {
+            new Audio(Sound[b - 1]).play();
+            Feedback.innerHTML = "Correct";
+            score = score + 1;
+        }
+        else {
+            Feedback.innerHTML = "Sorry it was " + b;
+            a[9].style.background = "red";
+            new Audio(Sound[9]).play();
+        }
+        a[b - 1].style.background = "green";
+        var picture = document.getElementById(score);
+        picture.src = "images/StarOn.gif";
+        if (score == 5) {
+            alert("You've won the game!");
+            location.reload();
+        }
+
+    }
+
+    function btnPlay_onClick() {
+        q = 0;
+        a = document.querySelectorAll('.numbers');
+
+        while (q <= 9) {
+            a[q].disabled = false;
+            a[q].style.background = "";
+            q = q + 1
+        }
+        if (h == 0) {
+            b = Math.floor((Math.random() * 10) + 1);
+            h = h + 1;
+        }
+        while (previousNumber == b){
+            b = Math.floor((Math.random() * 10) + 1);
+        }
+        if (b != previousNumber) {
+            new Audio(Sound[b - 1]).play();
+          //  Feedback.innerHTML = b;
+        }
+        q = 0;
+        previousNumber = b;
+    }
+     
+</script>
