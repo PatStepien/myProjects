@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Calculator
+    </title>
+   <style>
+       div#Background {
+           background-color:#e0e38d;
+           height:700px;
+           width:500px;
+           border:2px solid #2d2c85;
+           margin-left:auto;
+           margin-right:auto;
+       }
+       .numbers {
+           height: 25px;
+           width: 40px;
+           margin: 5px;
+           margin-top: 40px;
+           
+       }
+       .gStar{
+           margin-top:100px;
+       
+       }
+       .play {
+       height:25px;
+       width:60px;
+       margin-top:50px;
+       margin-left:145px;
+       margin-right:145px;
+       }
+       
+   </style>
+   
+</head>
+<body>
+    <div id="Background">
+        <p id="title" style="color:black; font-size:30px;font-weight:bold;text-align:center">Basic Calculator</p>
+        <input id="btn10" type="button" value="AC" class="numbers" onclick="btnAC_onClick()" disabled="disabled"/>
+        <input id="btnOn" type="button" value="ON" onclick="btnOn_onClick()"/>
+        <input id="btn0" class="numbers" type="button" value="0" onclick="btn0_onClick()"disabled="disabled"/><input id="btnD" class="numbers" type="button" value="." onclick="btnD_onClick()"disabled="disabled"/>
+        <input id="btn1" class="numbers" type="button" value="1" onclick="btn1_onClick()"disabled="disabled" /><input id="btn2" class="numbers" type="button" value="2" onclick="btn2_onClick()"disabled="disabled" />
+        <input id="btn3" class="numbers" type="button" value="3" onclick="btn3_onClick()"disabled="disabled"/><input id="btn4" class="numbers" type="button" value="4" onclick="btn4_onClick()"disabled="disabled"/>
+        <input id="btn5" class="numbers" type="button" value="5" onclick="btn5_onClick()"disabled="disabled"/><input id="btn6" class="numbers" type="button" value="6" onclick="btn6_onClick()"disabled="disabled"/>
+        <input id="btn7" class="numbers" type="button" value="7" onclick="btn7_onClick()"disabled="disabled"/><input id="btn8" class="numbers" type="button" value="8" onclick="btn8_onClick()"disabled="disabled" />
+        <input id="btn9" class="numbers" type="button" value="9" onclick="btn9_onClick()"disabled="disabled"/><input id="btn+" class="numbers" type="button" value="+"onclick="btnp_onClick()"disabled="disabled"/>
+        <input id="btn-" class="numbers" type="button" value="-"onclick="btnm_onClick()"disabled="disabled"/><input id="btn*" class="numbers" type="button" value="*"onclick="btnm2_onClick()"disabled="disabled"/>
+        <input id="btn/" class="numbers" type="button" value="/"onclick="btnd_onClick()"disabled="disabled"/>
+        <input id="btnOff" class="numbers" type="button" value="Off"onclick="btnOff_onClick()"disabled="disabled"/><input id="btn=" class="numbers" type="button" value="="onclick="btneq_onClick()"disabled="disabled"/>
+        <p id="Feedback1"></p><p id="Feedback2"></p><p id="Feedback3"></p>
+        <p id="Feedback4"></p>
+    </div>
+</body>
+</html>
+<script>
+var on1 = 0;
+var buttons = document.querySelectorAll('.numbers');
+var R;
+var in1;
+var in2;
+var switch1 = false;
+    function btnOn_onClick()
+    {
+        while ( on1 <= 17)
+         {
+            buttons[on1].disabled = false;
+            buttons[on1].style.background = "";
+            on1 = on1 + 1;
+         }
+            if(on1 == 18)
+        {
+        on1 = on1 - 1;
+        }
+    }
+ function btnOff_onClick()
+    {
+     while ( on1 >= 0 )
+     {
+            buttons[on1].disabled = true;
+            on1 = on1 - 1;
+     }
+     if (on1 == -1)
+     {
+     on1 = on1+1;
+     }
+    }
+function btnAC_onClick()
+{
+Feedback1.innerHTML ="";
+Feedback2.innerHTML ="";
+Feedback3.innerHTML ="";
+Feedback4.innerHTML ="";
+switch1 = false;
+}
+
+
+
+
+
+
+
+
+
+
+function  btn0_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "0";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "0";
+}
+}
+function  btn1_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "1";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "1";
+}
+}
+function  btn2_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "2";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "2";
+}
+}
+function  btn3_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "3";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "3";
+}
+}
+function  btn4_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "4";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "4";
+}
+}
+function  btn5_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "5";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "5";
+}
+}
+function  btn6_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "6";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "6";
+}
+}
+function  btn7_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "7";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "7";
+}
+}
+function  btn8_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "8";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "8";
+}
+}
+function  btn9_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + "9";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + "9";
+}
+}
+function btnD_onClick()
+{
+if(switch1 == false)
+{
+Feedback1.innerHTML = Feedback1.innerHTML + ".";
+}
+else if (switch1 == true)
+{
+Feedback3.innerHTML = Feedback3.innerHTML + ".";
+}
+}
+function btnm_onClick()
+{
+switch1 = true;
+
+Feedback2.innerHTML ="-" ;
+}
+function btnm2_onClick()
+{
+switch1 = true;
+Feedback2.innerHTML ="*";
+}
+function btnp_onClick()
+{
+switch1 = true;
+Feedback2.innerHTML ="+" ;
+}
+function btnd_onClick()
+{
+switch1 = true;
+Feedback2.innerHTML ="/" ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function btneq_onClick()
+ {
+ if(Feedback2.innerHTML == "+")
+ {
+ in1 = Feedback1.innerHTML;
+ in2 = Feedback3.innerHTML;
+ var in3 = Number.parseFloat(in1);
+ var in4 = Number.parseFloat(in2);
+ var R = in3 + in4;
+ }
+else if (Feedback2.innerHTML == "-")
+ {
+ in1 = Feedback1.innerHTML;
+ in2 = Feedback3.innerHTML;
+ var in3 = Number.parseFloat(in1);
+ var in4 = Number.parseFloat(in2);
+ var R = in3 - in4;
+ }
+  else if (Feedback2.innerHTML == "*")
+ {
+  in1 = Feedback1.innerHTML;
+ in2 = Feedback3.innerHTML;
+ var in3 = Number.parseFloat(in1);
+ var in4 = Number.parseFloat(in2);
+ var R = in3 * in4;
+ }
+ else if (Feedback2.innerHTML == "/")
+ {
+ in1 = Feedback1.innerHTML;
+ in2 = Feedback3.innerHTML;
+ var in3 = Number.parseFloat(in1);
+ var in4 = Number.parseFloat(in2);
+ var R = in3 / in4;
+ }
+ Feedback4.innerHTML = R;
+ }
+</script>
